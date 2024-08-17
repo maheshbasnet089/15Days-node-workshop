@@ -2,16 +2,29 @@
 const express = require('express')
 const app = express()
 
+app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
-    res.send("<h1>haha world</h1>")
+    const data = {
+        name : "Manish Basnet", 
+        age : 22, 
+        location : 'itahari'
+    }
+    const nepal = {
+        continent : 'asia', 
+    }
+    res.render("home.ejs",{
+        haha : data, 
+        hehe : nepal
+    })
 })
 
 app.get('/about',(req,res)=>{
-    res.send("This is about page")
+    res.render("test/about")
 })
 
 
+app.use(express.static('public/css/'))
 
 app.listen(3000,()=>{
     console.log("project suru vayo hai tw nodejs ko")
