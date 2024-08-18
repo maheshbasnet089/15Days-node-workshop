@@ -26,7 +26,7 @@ app.get('/about',(req,res)=>{
 
 app.use(express.static('public/css/'))
 
-app.listen(3000,()=>{
+app.listen(3306,()=>{
     console.log("project suru vayo hai tw nodejs ko")
 })
 
