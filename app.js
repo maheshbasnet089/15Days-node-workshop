@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 
 app.set('view engine','ejs')
+require("./model/index")
 
 app.get('/',(req,res)=>{
     const data = {
@@ -26,7 +27,7 @@ app.get('/about',(req,res)=>{
 
 app.use(express.static('public/css/'))
 
-app.listen(3306,()=>{
+app.listen(3000,()=>{
     console.log("project suru vayo hai tw nodejs ko")
 })
 
