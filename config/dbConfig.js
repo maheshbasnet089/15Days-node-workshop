@@ -1,8 +1,10 @@
+
+
 const databaseConfig = {
-    db : 'haha', 
-    username : 'root', 
-    password : '', 
-    host : '127.0.0.1', 
+    db : process.env.DB, 
+    username : process.env.USERNAME, 
+    password : process.env.PASSWORD, 
+    host : process.env.HOST, 
     port : 3306, 
     dialect : 'mysql'
 }
