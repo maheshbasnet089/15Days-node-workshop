@@ -1,10 +1,11 @@
 const {Sequelize,DataTypes} = require('sequelize')
+const databaseConfig = require('../config/dbConfig')
 
 
-const sequelize = new Sequelize('haha','root','',{
-    host : '127.0.0.1', 
-    port : 3306, 
-    dialect : 'mysql', 
+const sequelize = new Sequelize(databaseConfig.db,databaseConfig.username,databaseConfig.password,{
+    host : databaseConfig.host, 
+    port : databaseConfig.port, 
+    dialect : databaseConfig.dialect, 
     operatorsAliases : false, 
     pool : {
         max : 5, 
