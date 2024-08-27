@@ -1,7 +1,7 @@
 require('dotenv').config()
 // const app = require('express')()
 const express = require('express')
-const { blogs } = require('./model/index')
+const { blogs, sequelize } = require('./model/index')
 
 const app = express()
 
