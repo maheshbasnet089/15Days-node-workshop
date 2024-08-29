@@ -3,10 +3,11 @@ const multer = require('multer')
 
 const storage = multer.diskStorage({
     destination : function(req,file,cb){
-        cb(null,'./storage')
+        cb(null,'./storage') // cb(err,success)
     }
 })
 
 module.exports = {multer,storage} 
+
 
 
