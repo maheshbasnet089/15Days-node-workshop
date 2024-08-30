@@ -16,6 +16,13 @@ app.set('view engine','ejs')
 require("./model/index")
 app.use(express.urlencoded({extended : true}))
 
+app.get("/",async (req,res)=>{
+   const datas = await blogs.findAll() // select * from blogs
+  
+   res.render("home",{blogs : datas})
+})
+
+
 app.get("/create",(req,res)=>{
     res.render("create")
 
@@ -26,11 +33,15 @@ app.post('/create',upload.single('image') ,async (req,res)=>{
     // const title = req.body.title 
     // const subtitle = req.body.subtitle 
     // const description = req.body.description
+ 
+   const filename = req.file.filename
     const {title,subtitle,description} = req.body 
    await blogs.create({
         title : title,
         subtitle : subtitle, 
-        description : description
+        description : description, 
+        image : filename
+       
     })
     res.send("Blog added successfully")
 
