@@ -20,10 +20,14 @@
 
     <!-- Card Section -->
     <div class="card-container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Card Image">
-            <div class="card-title">Card Title 1</div>
-        </div>
+      <%  blogs.forEach(function(blog){ %>
+            <div class="card">
+                <img src="<%- blog.image %>" alt="Card Image">
+                <div class="card-title"><%- blog.title %></div>
+            </div>
+        <% }) %>
+   
+    
         
     </div>
 </body>

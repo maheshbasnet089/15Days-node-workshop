@@ -17,7 +17,7 @@ require("./model/index")
 app.use(express.urlencoded({extended : true}))
 
 app.get("/",async (req,res)=>{
-   const datas = await blogs.findAll() // select * from blogs
+   const datas = await blogs.findAll() // select * from blogs returns array 
   
    res.render("home",{blogs : datas})
 })
@@ -49,6 +49,7 @@ app.post('/create',upload.single('image') ,async (req,res)=>{
 
 
 app.use(express.static('public/css/'))
+app.use(express.static("./storage/"))
 
 app.listen(3000,()=>{
     console.log("project suru vayo hai tw nodejs ko")
