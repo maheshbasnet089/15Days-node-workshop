@@ -37,7 +37,7 @@ exports.createBlog = async (req,res)=>{
  if(req.file){
     file = req.file.filename
  }else{
-    filename = ""
+    filename = "http://example.com/a.png"
  }
 //    const filename = req.file.filename
     const {title,subtitle,description} = req.body 
